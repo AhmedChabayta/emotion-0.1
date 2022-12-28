@@ -1,1 +1,2 @@
-export * from "./components";
+export { Button, Typography } from "./components";
+export { colors, hexToRGB } from "./Library";

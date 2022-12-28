@@ -1,5 +1,7 @@
+/* eslint-disable @typescript-eslint/no-non-null-assertion */
 import { useState, useEffect } from "react";
 import styled from "@emotion/styled";
+import React from "react";
 
 export type Duration = {
   duration: number;
@@ -36,17 +38,17 @@ const useDebouncedRippleCleanUp = (
   cleanUpFunction: () => void
 ) => {
   useEffect(() => {
-    let bounce: any = null;
+    let bounce: string | number | NodeJS.Timeout | null | undefined = null;
     if (rippleCount > 0) {
-      clearTimeout(bounce);
+      clearTimeout(bounce!);
 
       bounce = setTimeout(() => {
         cleanUpFunction();
-        clearTimeout(bounce);
+        clearTimeout(bounce!);
       }, duration * 4);
     }
 
-    return () => clearTimeout(bounce);
+    return () => clearTimeout(bounce!);
   }, [rippleCount, duration, cleanUpFunction]);
 };
 
@@ -58,7 +60,14 @@ const Ripple = ({ duration = 850, color = "#fff" }) => {
   });
 
   const addRipple = (event: {
-    currentTarget: { getBoundingClientRect: () => any };
+    currentTarget: {
+      getBoundingClientRect: () => {
+        width: number;
+        height: number;
+        x: number;
+        y: number;
+      };
+    };
     pageX: number;
     pageY: number;
   }) => {

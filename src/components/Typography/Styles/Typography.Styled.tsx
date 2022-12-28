@@ -30,27 +30,27 @@ export const getSizeStyles = (
       `;
     case "2xl":
       return css`
-        font-size: 12px;
+        font-size: 36px;
         font-weight: 600;
-        line-height: 16px;
+        line-height: 43.2px;
       `;
     case "3xl":
       return css`
-        font-size: 12px;
+        font-size: 48px;
         font-weight: 600;
-        line-height: 16px;
+        line-height: 48px;
       `;
     case "4xl":
       return css`
-        font-size: 12px;
+        font-size: 60px;
         font-weight: 600;
-        line-height: 16px;
+        line-height: 60px;
       `;
     case "5xl":
       return css`
-        font-size: 12px;
+        font-size: 72px;
         font-weight: 600;
-        line-height: 16px;
+        line-height: 72px;
       `;
 
     default:

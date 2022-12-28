@@ -15,10 +15,6 @@ const Text = styled.p<TextProps>`
 `;
 
 const Typography = ({ size, children, onClick, href, ...rest }: TextProps) => {
-let SIZE;
-    if (size === "xs" || "sm" || "md" || "lg" || "2xl" || "3xl" || "4xl" || "5xl"){
-      
-    };
   return (
     <Text onClick={onClick} size={size} {...rest}>
       {children}
